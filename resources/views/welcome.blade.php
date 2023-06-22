@@ -427,7 +427,7 @@
             @foreach ($listitem as $item)
                 <div class="flex" style="align-items: center">
                     <p>Item : {{ $item->name }}</p>
-                    <form action="{{ route('markComplete',$item->id) }}" method="post">
+                    <form action="{{ route('markComplete', $item->id) }}" method="post">
                         @csrf
                         <button type="submit" style="max-height: 25px; margin-left:20px">Mark Complete</button>
                     </form>
@@ -440,6 +440,13 @@
                 <input type="text" name="listitem" id="listitem"><br>
                 <button type="submit">Save Item</button>
             </form>
+
+            <h2>Kegiatan yang sudah selesai</h2>
+            @foreach ($listitem as $selesai)
+                <div class="flex" style="align-items: center">
+                    <p>{{ $selesai->name }} = Selesai</p>
+                </div>
+            @endforeach
         </div>
     </div>
 </body>
